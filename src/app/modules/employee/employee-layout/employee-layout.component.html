@@ -1,0 +1,17 @@
+<div class="container">
+	<h3 class="text-center">Employee Information Form</h3>
+	{{activeIndex}}
+	<div class="stepper mt-5">
+		<p-steps [model]="items" [readonly]="false" [activeIndex]="activeIndex"
+			(activeIndexChange)="onActiveIndexChange($event)"></p-steps>
+
+	</div>
+	<div class="components" style="min-height: 400px;">
+
+	</div>
+	<div class="buttons">
+		<button class="btn btn-secondary" (click)="onPrevious()" *ngIf="activeIndex>0">Previous</button>
+		<button class="btn btn-secondary" (click)="onNext()" *ngIf="activeIndex<items.length-1">Next</button>
+		<button class="btn btn-primary" *ngIf="activeIndex==items.length-1">Submit</button>
+	</div>
+</div>
